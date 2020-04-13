@@ -13,8 +13,22 @@ public class Sort {
         list.add("cherry");
         list.add("watermelon");
         System.out.println(list);
-        selectionSort(list);
+        insertionSort(list);
         System.out.println(list);
+    }
+
+    static void insertionSort(ArrayList <String> list){
+            for(int i = 1; i < list.size(); i++){
+                String current= list.get(i);
+                int j = i - 1;
+                String swap = list.get(j); 
+                if (current.compareTo(swap) < 0){
+                    swap = list.get(j);
+                    list.set(i, swap);
+                    list.set(j, current);
+                    j -= 1; 
+                }
+            }
     }
 
     static void selectionSort(ArrayList<String> list){
