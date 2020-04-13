@@ -14,10 +14,17 @@ public class Search {
         haystack.add("hay");
         haystack.add("hay");
         String needle = "needle";
-        System.out.println(binarySearch(haystack, needle));
+        System.out.println(search(haystack, needle));
     }
 
-    
+    static int search(ArrayList<String> haystack, String needle) {
+        for (int i = 0; i < haystack.size(); i++) {
+            if (haystack.get(i).equals(needle)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     static int binarySearch(ArrayList<String> haystack, String needle){
         int left = 0;
